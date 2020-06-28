@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.cibertec.dao.ClienteDAOImpl;
-import com.cibertec.entidad.Cliente;
+import com.cibertec.entidad.Usuario;
 
 @Path("/cliente")
 public class ClienteRest {
@@ -30,7 +30,7 @@ public class ClienteRest {
 	@Path("/guardar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public int registrarCliente(Cliente bean) {
+	public int registrarCliente(Usuario bean) {
 		return dao.guardarCliente(bean);
 	}
 }

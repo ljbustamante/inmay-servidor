@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import com.cibertec.entidad.Cliente;
+import com.cibertec.entidad.Usuario;
 import com.cibertec.interfaces.ClienteDAO;
 import utils.MysqlDBConexion;
 
 public class ClienteDAOImpl implements ClienteDAO{
 	@Override
-	public int guardarCliente(Cliente bean){
+	public int guardarCliente(Usuario bean){
 		int estado=-1;
 		Connection cn=null;
 		CallableStatement cstm=null;
@@ -38,9 +38,9 @@ public class ClienteDAOImpl implements ClienteDAO{
 	}
 
 	@Override
-	public List<Cliente> listarClientesPorEdad(int minimo, int maximo) {
-		List<Cliente> lista=new ArrayList<Cliente>();
-		Cliente bean=null;
+	public List<Usuario> listarClientesPorEdad(int minimo, int maximo) {
+		List<Usuario> lista=new ArrayList<Usuario>();
+		Usuario bean=null;
 		Connection cn=null;
 		CallableStatement cstm=null;
 		ResultSet rs=null;
@@ -52,7 +52,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 			cstm.setInt(2, maximo);
 			rs=cstm.executeQuery();
 			while(rs.next()) {
-				bean=new Cliente();
+				bean=new Usuario();
 				bean.setIdCliente(rs.getInt(1));
 				bean.setNombre(rs.getString(2));
 				bean.setApellido(rs.getString(3));
