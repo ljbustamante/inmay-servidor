@@ -17,7 +17,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		CallableStatement cstm=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call SP_saveUsuario(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql="call sp_saveUsuario(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			cstm=cn.prepareCall(sql);
 			cstm.setString(1,bean.getNombreU());
 			cstm.setString(2,bean.getApellidoU());
@@ -54,7 +54,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		CallableStatement cstm=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_updateDocente(?,?,?,?,?,?,?,?,?)";
+			String sql="call sp_updateUsuario(?,?,?,?,?,?,?,?,?)";
 			cstm=cn.prepareCall(sql);
 			cstm.setInt(1, bean.getIdUsuario());
 			cstm.setString(2,bean.getNombreU());
@@ -92,7 +92,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		CallableStatement cstm=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call SP_deleteDocente(?)";
+			String sql="call sp_deleteUsuario(?)";
 			cstm=cn.prepareCall(sql);
 			cstm.setInt(1,codigo);
 			System.out.println("SENTENCIA : "+cstm+"--");

@@ -10,50 +10,50 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.cibertec.dao.UsuarioDAOImpl;
-import com.cibertec.entidad.Usuario;
+import com.cibertec.dao.ProductoDAOImpl;
+import com.cibertec.entidad.Producto;
 
-@Path("/usuario")
-public class UsuarioRest {
-	private UsuarioDAOImpl dao;
+@Path("/Producto")
+public class ProductoRest {
+	private ProductoDAOImpl dao;
 	
-	public  UsuarioRest() {
-		dao = new UsuarioDAOImpl();
+	public  ProductoRest() {
+		dao = new ProductoDAOImpl();
 	}
 	
 	@GET
 	@Path("/listar")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response listarUsuarios(){
-		return  Response.ok(dao.listarUsuarios()).build();
+	public Response listarProductos(){
+		return  Response.ok(dao.listarProductos()).build();
 	}
 	
 	@GET
 	@Path("/{codigo}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscarUsuario(@PathParam("codigo") int cod){
-		return  Response.ok(dao.buscarUsuario(cod)).build();
+	public Response buscarProducto(@PathParam("codigo") int cod){
+		return  Response.ok(dao.buscarProducto(cod)).build();
 	}
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public int guardarUsuario(Usuario bean) {
-		return dao.guardarUsuario(bean);
+	public int guardarProducto(Producto bean) {
+		return dao.guardarProducto(bean);
 	}
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public int actualizarUsuario(Usuario bean) {
-		return dao.actualizarUsuario(bean);
+	public int actualizarProducto(Producto bean) {
+		return dao.actualizarProducto(bean);
 	}	
 	
 	@DELETE
 	@Path("/{codigo}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public int eliminarUsuario(@PathParam("codigo") int cod) {
-		return dao.eliminarUsuario(cod);
+	public int eliminarProducto(@PathParam("codigo") int cod) {
+		return dao.eliminarProducto(cod);
 	}	
 }
 
