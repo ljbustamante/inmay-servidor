@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Distrito implements Serializable {
 	private int idDistrito;
 	private String descDistrito;
-	private Provincia provincia;
+	private int idProvincia;
 	public int getIdDistrito() {
 		return idDistrito;
 	}
@@ -18,12 +18,12 @@ public class Distrito implements Serializable {
 	public void setDescDistrito(String descDistrito) {
 		this.descDistrito = descDistrito;
 	}
-	public Provincia getProvincia() {
-		return provincia;
+	public int getIdProvincia() {
+		return idProvincia;
 	}
-	public void setProvincia(Provincia provincia) {
-		this.provincia = provincia;
+	public void setIdProvincia(int idProvincia) {
+		this.idProvincia = idProvincia;
 	}
-	
+
 	
 }

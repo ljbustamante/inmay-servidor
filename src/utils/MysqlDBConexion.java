@@ -6,7 +6,7 @@ public class MysqlDBConexion {
 		Connection cn=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			cn=DriverManager.getConnection("jdbc:mysql://localhost/CL3","root","mysql");
+			cn=DriverManager.getConnection("jdbc:mysql://localhost/BD_INMAY","root","mysql");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

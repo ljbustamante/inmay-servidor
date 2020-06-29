@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Provincia implements Serializable {
 	private int idProvincia;
 	private String descProvincia;
-	private Ciudad ciudad;
+	private int idCiudad;
 	public int getIdProvincia() {
 		return idProvincia;
 	}
@@ -18,11 +18,11 @@ public class Provincia implements Serializable {
 	public void setDescProvincia(String descProvincia) {
 		this.descProvincia = descProvincia;
 	}
-	public Ciudad getCiudad() {
-		return ciudad;
+	public int getIdCiudad() {
+		return idCiudad;
 	}
-	public void setCiudad(Ciudad ciudad) {
-		this.ciudad = ciudad;
+	public void setIdCiudad(int idCiudad) {
+		this.idCiudad = idCiudad;
 	}
 	
 	

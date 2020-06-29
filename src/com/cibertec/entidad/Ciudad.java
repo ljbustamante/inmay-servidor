@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Ciudad implements Serializable {
 	private int idCiudad;
 	private String descCiudad;
-	private Pais pais;
+	private int idPais;
 	public int getIdCiudad() {
 		return idCiudad;
 	}
@@ -18,12 +18,12 @@ public class Ciudad implements Serializable {
 	public void setDescCiudad(String descCiudad) {
 		this.descCiudad = descCiudad;
 	}
-	public Pais getPais() {
-		return pais;
+	public int getIdPais() {
+		return idPais;
 	}
-	public void setPais(Pais pais) {
-		this.pais = pais;
+	public void setIdPais(int idPais) {
+		this.idPais = idPais;
 	}
-	
+
 	
 }

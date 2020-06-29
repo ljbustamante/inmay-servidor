@@ -4,60 +4,59 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import com.cibertec.entidad.Usuario;
-import com.cibertec.interfaces.ClienteDAO;
+
+import com.cibertec.entidad.Pais;
+import com.cibertec.interfaces.PaisDAO;
 import utils.MysqlDBConexion;
 
-public class ClienteDAOImpl implements ClienteDAO{
-	@Override
-	public int guardarCliente(Usuario bean){
-		int estado=-1;
+public class PaisDAOImpl implements PaisDAO{
+	public Pais buscarPais(int codigo) {
+		Pais bean=null;
 		Connection cn=null;
 		CallableStatement cstm=null;
+		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_guardarCliente(?,?,?,?)";
+			String sql="call sp_buscarPais(?)";
 			cstm=cn.prepareCall(sql);
-			cstm.setString(1, bean.getNombre());
-			cstm.setString(2, bean.getApellido());
-			cstm.setString(3, bean.getDni());
-			cstm.setInt(4, bean.getEdad());
-			estado=cstm.executeUpdate();
+			cstm.setInt(1,codigo);
+			rs=cstm.executeQuery();
+			if(rs.next()) {
+				bean=new Pais();
+				bean.setIdPais(rs.getInt(1));
+				bean.setDescPais(rs.getString(2));
+			}
 		} catch (Exception e) {
 			e.printStackTrace();	
 		}
 		finally{
 			try {
+				if(rs!=null) rs.close();
 				if(cstm!=null) cstm.close();
 				if(cn!=null) cn.close();
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
 		}
-		return estado;
-	}
+		return bean;
+	}	
 
 	@Override
-	public List<Usuario> listarClientesPorEdad(int minimo, int maximo) {
-		List<Usuario> lista=new ArrayList<Usuario>();
-		Usuario bean=null;
+	public List<Pais> listarPaises() {
+		List<Pais> lista=new ArrayList<Pais>();
+		Pais bean=null;
 		Connection cn=null;
 		CallableStatement cstm=null;
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listarClientes(?, ?)";
+			String sql="call sp_listarPaises()";
 			cstm=cn.prepareCall(sql);
-			cstm.setInt(1, minimo);
-			cstm.setInt(2, maximo);
 			rs=cstm.executeQuery();
 			while(rs.next()) {
-				bean=new Usuario();
-				bean.setIdCliente(rs.getInt(1));
-				bean.setNombre(rs.getString(2));
-				bean.setApellido(rs.getString(3));
-				bean.setDni(rs.getString(4));
-				bean.setEdad(rs.getInt(5));
+				bean=new Pais();
+				bean.setIdPais(rs.getInt(1));
+				bean.setDescPais(rs.getString(2));
 				lista.add(bean);
 			}
 		} catch (Exception e) {

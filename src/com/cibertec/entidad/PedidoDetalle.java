@@ -6,25 +6,25 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class PedidoDetalle implements Serializable {
 	private int idPedidoDetalle;
-	private Pedido pedido;
-	private Producto producto;
+	private int idPedido;
+	private int idProducto;
 	public int getIdPedidoDetalle() {
 		return idPedidoDetalle;
 	}
 	public void setIdPedidoDetalle(int idPedidoDetalle) {
 		this.idPedidoDetalle = idPedidoDetalle;
 	}
-	public Pedido getPedido() {
-		return pedido;
+	public int getIdPedido() {
+		return idPedido;
 	}
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
 	}
-	public Producto getProducto() {
-		return producto;
+	public int getIdProducto() {
+		return idProducto;
 	}
-	public void setProducto(Producto producto) {
-		this.producto = producto;
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
 	}
-		
+	
 }

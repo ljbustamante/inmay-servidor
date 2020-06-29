@@ -2,32 +2,33 @@ package com.cibertec.entidad;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class Pedido implements Serializable {
 	private int idPedido;
-	private Usuario usuario;
+	private int idUsuario;
 	private Date fPedido;
 	private Date fEntrega;
-	private EstadoPedido estado;
+	private int idEstadoPedido;
 	private String destinatario;
 	private String direccion;
-	private Pais pais;
-	private Ciudad ciudad;
-	private Provincia provincia;
-	private Distrito distrito;
+	private int idPais;
+	private int idCiudad;
+	private int idProvincia;
+	private int idDistrito;
 	public int getIdPedido() {
 		return idPedido;
 	}
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
-	public Usuario getUsuario() {
-		return usuario;
+	public int getIdUsuario() {
+		return idUsuario;
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	public Date getfPedido() {
 		return fPedido;
@@ -41,11 +42,11 @@ public class Pedido implements Serializable {
 	public void setfEntrega(Date fEntrega) {
 		this.fEntrega = fEntrega;
 	}
-	public EstadoPedido getEstado() {
-		return estado;
+	public int getIdEstadoPedido() {
+		return idEstadoPedido;
 	}
-	public void setEstado(EstadoPedido estado) {
-		this.estado = estado;
+	public void setIdEstadoPedido(int idEstadoPedido) {
+		this.idEstadoPedido = idEstadoPedido;
 	}
 	public String getDestinatario() {
 		return destinatario;
@@ -59,28 +60,29 @@ public class Pedido implements Serializable {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public Pais getPais() {
-		return pais;
+	public int getIdPais() {
+		return idPais;
 	}
-	public void setPais(Pais pais) {
-		this.pais = pais;
+	public void setIdPais(int idPais) {
+		this.idPais = idPais;
 	}
-	public Ciudad getCiudad() {
-		return ciudad;
+	public int getIdCiudad() {
+		return idCiudad;
 	}
-	public void setCiudad(Ciudad ciudad) {
-		this.ciudad = ciudad;
+	public void setIdCiudad(int idCiudad) {
+		this.idCiudad = idCiudad;
 	}
-	public Provincia getProvincia() {
-		return provincia;
+	public int getIdProvincia() {
+		return idProvincia;
 	}
-	public void setProvincia(Provincia provincia) {
-		this.provincia = provincia;
+	public void setIdProvincia(int idProvincia) {
+		this.idProvincia = idProvincia;
 	}
-	public Distrito getDistrito() {
-		return distrito;
+	public int getIdDistrito() {
+		return idDistrito;
 	}
-	public void setDistrito(Distrito distrito) {
-		this.distrito = distrito;
+	public void setIdDistrito(int idDistrito) {
+		this.idDistrito = idDistrito;
 	}
+	
 }

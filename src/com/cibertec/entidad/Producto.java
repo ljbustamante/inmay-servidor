@@ -7,10 +7,10 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 public class Producto implements Serializable {
 	private int idProducto;
 	private String descProducto;
-	private Categoria categoria;
+	private int idCategoria;
 	private int stock;
 	private double precioU;
-	private Proveedor proveedor;
+	private int idProveedor;
 	public int getIdProducto() {
 		return idProducto;
 	}
@@ -23,11 +23,11 @@ public class Producto implements Serializable {
 	public void setDescProducto(String descProducto) {
 		this.descProducto = descProducto;
 	}
-	public Categoria getCategoria() {
-		return categoria;
+	public int getIdCategoria() {
+		return idCategoria;
 	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setIdCategoria(int idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 	public int getStock() {
 		return stock;
@@ -41,11 +41,12 @@ public class Producto implements Serializable {
 	public void setPrecioU(double precioU) {
 		this.precioU = precioU;
 	}
-	public Proveedor getProveedor() {
-		return proveedor;
+	public int getIdProveedor() {
+		return idProveedor;
 	}
-	public void setProveedor(Proveedor proveedor) {
-		this.proveedor = proveedor;
+	public void setIdProveedor(int idProveedor) {
+		this.idProveedor = idProveedor;
 	}
+
 	
 }
