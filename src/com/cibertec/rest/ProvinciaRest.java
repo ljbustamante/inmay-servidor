@@ -8,28 +8,28 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.cibertec.dao.PaisDAOImpl;
+import com.cibertec.dao.ProvinciaDAOImpl;
 
-@Path("/pais")
-public class PaisRest {
-	private PaisDAOImpl dao;
+@Path("/provincia")
+public class ProvinciaRest {
+	private ProvinciaDAOImpl dao;
 	
-	public  PaisRest() {
-		dao = new PaisDAOImpl();
+	public  ProvinciaRest() {
+		dao = new ProvinciaDAOImpl();
 	}
 	
 	@GET
 	@Path("/listar")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response listarPaises(){
-		return  Response.ok(dao.listarPaises()).build();
+	public Response listarProvincies(){
+		return  Response.ok(dao.listarProvincias()).build();
 	}
 	
 	@GET
 	@Path("/{codigo}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscarPais(@PathParam("codigo") int cod){
-		return  Response.ok(dao.buscarPais(cod)).build();
+	public Response buscarProvincia(@PathParam("codigo") int cod){
+		return  Response.ok(dao.buscarProvincia(cod)).build();
 	}
 }
 
