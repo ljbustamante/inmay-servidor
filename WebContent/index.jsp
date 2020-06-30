@@ -1,3 +1,3 @@
 <%
-	response.sendRedirect("./rest/usuario/listar");
+	response.sendRedirect("./rest/producto/listar");
 %>
