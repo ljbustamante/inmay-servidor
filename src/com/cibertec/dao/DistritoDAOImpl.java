@@ -51,7 +51,7 @@ public class DistritoDAOImpl implements DistritoDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listDistritos()";
+			String sql="call sp_listDistrito()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {

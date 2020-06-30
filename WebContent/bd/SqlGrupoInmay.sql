@@ -2522,12 +2522,12 @@ call sp_listProveedor;
 
 -- listar
 DELIMITER $$
-create procedure sp_listCategorias()
+create procedure sp_listCategoria()
 BEGIN
 select * from tb_categoria;
 END$$
 DELIMITER ;
-call sp_listCategorias;
+call sp_listCategoria;
 
 
 
@@ -2535,30 +2535,30 @@ call sp_listCategorias;
 
 -- Listado de PAISES
 DELIMITER $$
-create procedure  sp_listarPaises()
+create procedure  sp_listPais()
 BEGIN
 	select * from tb_pais;
 END$$
 DELIMITER ;
-call sp_listarPaises();
+call sp_listPais();
 
 -- Busqueda de PAISES
 DELIMITER $$
-create procedure  sp_findPaises(cod int(11))
+create procedure  sp_findPais(cod int(11))
 BEGIN
 	select * from tb_pais where idPais=cod;
 END$$
 DELIMITER ;
-call sp_findPaises(1);
+call sp_findPais(1);
 
 -- Listado ciudad
 DELIMITER $$
-create procedure  sp_listarCiudad()
+create procedure  sp_listCiudad()
 BEGIN
 	select * from tb_ciudad;
 END$$
 DELIMITER ;
-call sp_listarCiudad();
+call sp_listCiudad();
 
 -- Busqueda de Ciudad
 DELIMITER $$
@@ -2572,12 +2572,12 @@ call sp_findCiudad(1);
 
 -- Lista Provincia
 DELIMITER $$
-create procedure  sp_listarProvincia()
+create procedure  sp_listProvincia()
 BEGIN
 	select * from tb_provincia;
 END$$
 DELIMITER ;
-call sp_listarProvincia();
+call sp_listProvincia();
 
 -- Busqueda Provincia
 DELIMITER $$
@@ -2590,12 +2590,12 @@ call sp_findProvincia(1);
 
 -- Distrito
 DELIMITER $$
-create procedure  sp_listarDistrito()
+create procedure  sp_listDistrito()
 BEGIN
 	select * from tb_distrito;
 END$$
 DELIMITER ;
-call sp_listarDistrito();
+call sp_listDistrito();
 
 -- sp_lista_pais, Busqueda de PAISES
 DELIMITER $$

@@ -140,7 +140,7 @@ public class ProductoDAOImpl implements ProductoDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listProductos()";
+			String sql="call sp_listProducto()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {

@@ -51,7 +51,7 @@ public class ProvinciaDAOImpl implements ProvinciaDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listProvincias()";
+			String sql="call sp_listProvincia()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {

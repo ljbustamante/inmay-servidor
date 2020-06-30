@@ -51,7 +51,7 @@ public class CiudadDAOImpl implements CiudadDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listCiudades()";
+			String sql="call sp_listCiudad()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {

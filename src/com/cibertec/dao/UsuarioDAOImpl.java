@@ -164,7 +164,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listUsuarios()";
+			String sql="call sp_listUsuario()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {

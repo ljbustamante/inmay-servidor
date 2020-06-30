@@ -131,7 +131,7 @@ public class ProveedorDAOImpl implements ProveedorDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listProveedors()";
+			String sql="call sp_listProveedor()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {

@@ -50,7 +50,7 @@ public class PaisDAOImpl implements PaisDAO{
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listPaises()";
+			String sql="call sp_listPais()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {
