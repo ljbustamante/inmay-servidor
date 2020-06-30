@@ -2488,6 +2488,15 @@ END$$
 DELIMITER ;
 call sp_findProducto(4);
 
+-- find price
+DELIMITER $$
+create procedure sp_findProductoxPrecio(p1 decimal, p2 decimal)
+BEGIN
+select * from tb_producto where precioU>=p1 and precioU<=p2;
+END$$
+DELIMITER ;
+call sp_findProductoxPrecio(1,500);
+
 -- listar
 DELIMITER $$
 create procedure sp_listProducto()
