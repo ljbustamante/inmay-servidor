@@ -132,6 +132,44 @@ public class ProductoDAOImpl implements ProductoDAO{
 	}	
 
 	@Override
+	public List<Producto> buscarProductoxPrecio(double p1, double p2) {
+		List<Producto> list = new ArrayList<Producto>();
+		Connection cn=null;
+		CallableStatement cstm=null;
+		ResultSet rs=null;
+		try {
+			cn=MysqlDBConexion.getConexion();
+			String sql="call sp_findProductoxPrecio(?,?)";
+			cstm=cn.prepareCall(sql);
+			cstm.setDouble(1,p1);
+			cstm.setDouble(2,p2);
+			rs=cstm.executeQuery();
+			while(rs.next()) {
+				Producto bean =new Producto();
+				bean.setIdProducto(rs.getInt(1));
+				bean.setDescProducto(rs.getString(2));
+				bean.setIdCategoria(rs.getInt(3));
+				bean.setStock(rs.getInt(4));
+				bean.setPrecioU(rs.getDouble(5));
+				bean.setIdProveedor(rs.getInt(6));
+				list.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();	
+		}
+		finally{
+			try {
+				if(rs!=null) rs.close();
+				if(cstm!=null) cstm.close();
+				if(cn!=null) cn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return list;
+	}
+		
+	@Override
 	public List<Producto> listarProductos() {
 		List<Producto> lista=new ArrayList<Producto>();
 		Producto bean=null;

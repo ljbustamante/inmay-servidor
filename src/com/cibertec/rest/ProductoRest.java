@@ -35,6 +35,13 @@ public class ProductoRest {
 		return  Response.ok(dao.buscarProducto(cod)).build();
 	}
 	
+	@GET
+	@Path("/{precio1}/{precio2}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response buscarProductoxPrecio(@PathParam("precio1") double precio1, @PathParam("precio2") double precio2){
+		return  Response.ok(dao.buscarProductoxPrecio(precio1,precio2)).build();
+	}
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)

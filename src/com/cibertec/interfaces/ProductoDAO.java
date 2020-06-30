@@ -9,5 +9,6 @@ public interface ProductoDAO {
 	public Producto buscarProducto(int codigo);
 	public List<Producto> listarProductos();
 	public int eliminarProducto(int codigo);
+	public List<Producto> buscarProductoxPrecio(double p1, double p2);
 }
 
