@@ -1,3 +1,3 @@
 <%
-	response.sendRedirect("./rest/cliente/");
+	response.sendRedirect("./rest/usuario/listar");
 %>
