@@ -15,6 +15,7 @@ public class Usuario implements Serializable{
 	private int idProvincia;
 	private int idDistrito;
 	private String telefonoU;
+	private int idRol;
 	private int idEstadoUsuario;
 	private boolean isStaff;
 	public int getIdUsuario() {
@@ -89,6 +90,12 @@ public class Usuario implements Serializable{
 	public void setTelefonoU(String telefonoU) {
 		this.telefonoU = telefonoU;
 	}
+	public int getIdRol() {
+		return idRol;
+	}
+	public void setIdRol(int idRol) {
+		this.idRol = idRol;
+	}
 	public int getIdEstadoUsuario() {
 		return idEstadoUsuario;
 	}
@@ -101,7 +108,6 @@ public class Usuario implements Serializable{
 	public void setStaff(boolean isStaff) {
 		this.isStaff = isStaff;
 	}
-	
-	
+		
 }
 

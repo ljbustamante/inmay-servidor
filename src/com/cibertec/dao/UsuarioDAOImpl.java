@@ -17,7 +17,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		CallableStatement cstm=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_saveUsuario(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql="call sp_saveUsuario(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			cstm=cn.prepareCall(sql);
 			cstm.setString(1,bean.getNombreU());
 			cstm.setString(2,bean.getApellidoU());
@@ -30,8 +30,9 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 			cstm.setInt(9, bean.getIdProvincia());
 			cstm.setInt(10, bean.getIdDistrito());
 			cstm.setString(11,bean.getTelefonoU());
-			cstm.setInt(12, bean.getIdEstadoUsuario());
-			cstm.setBoolean(13, bean.isStaff());
+			cstm.setInt(12, bean.getIdRol());
+			cstm.setInt(13, bean.getIdEstadoUsuario());
+			cstm.setBoolean(14, bean.isStaff());
 			//System.out.println("SENTENCIA : "+cstm+"--");
 			estado=cstm.executeUpdate();
 		} catch (Exception e) {
@@ -54,7 +55,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		CallableStatement cstm=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_updateUsuario(?,?,?,?,?,?,?,?,?)";
+			String sql="call sp_updateUsuario(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			cstm=cn.prepareCall(sql);
 			cstm.setInt(1, bean.getIdUsuario());
 			cstm.setString(2,bean.getNombreU());
@@ -68,8 +69,9 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 			cstm.setInt(10, bean.getIdProvincia());
 			cstm.setInt(11, bean.getIdDistrito());
 			cstm.setString(12,bean.getTelefonoU());
-			cstm.setInt(13, bean.getIdEstadoUsuario());
-			cstm.setBoolean(14, bean.isStaff());
+			cstm.setInt(13, bean.getIdRol());
+			cstm.setInt(14, bean.getIdEstadoUsuario());
+			cstm.setBoolean(15, bean.isStaff());
 			estado=cstm.executeUpdate();
 			System.out.println("SENTENCIA : "+cstm+"--");
 		} catch (Exception e) {
@@ -137,8 +139,9 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 				bean.setIdProvincia(rs.getInt(10));
 				bean.setIdDistrito(rs.getInt(11));
 				bean.setTelefonoU(rs.getString(12));
-				bean.setIdEstadoUsuario(rs.getInt(13));
-				bean.setStaff(rs.getBoolean(14));
+				bean.setIdRol(rs.getInt(13));
+				bean.setIdEstadoUsuario(rs.getInt(14));
+				bean.setStaff(rs.getBoolean(15));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();	
@@ -181,8 +184,9 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 				bean.setIdProvincia(rs.getInt(10));
 				bean.setIdDistrito(rs.getInt(11));
 				bean.setTelefonoU(rs.getString(12));
-				bean.setIdEstadoUsuario(rs.getInt(13));
-				bean.setStaff(rs.getBoolean(14));
+				bean.setIdRol(rs.getInt(13));
+				bean.setIdEstadoUsuario(rs.getInt(14));
+				bean.setStaff(rs.getBoolean(15));
 				lista.add(bean);
 			}
 		} catch (Exception e) {

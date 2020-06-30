@@ -2359,16 +2359,44 @@ select * from tb_usuarios;
 -- Save
 DELIMITER $$
 create procedure sp_saveUsuario 
-(IN nom varchar(30),IN ape varchar(30),IN mail varchar(40), IN clave varchar(15), IN frec date,IN dir varchar(100),IN pais int(11),IN ciudad int(11),IN provincia int(11),IN dist int(11),IN telf varchar(15),IN rol int(11),IN estado int(11),IN staff boolean)
+(IN nom varchar(30),
+ IN ape varchar(30),
+ IN mail varchar(40), 
+ IN clave varchar(15), 
+ IN frec date, 
+ IN dir varchar(100), 
+ IN pais int(11), 
+ IN ciudad int(11), 
+ IN provincia int(11), 
+ IN dist int(11), 
+ IN telf varchar(15), 
+ IN rol int(11), 
+ IN estado int(11),
+ IN staff boolean)
 BEGIN
-insert into tb_usuarios values(null,nom,ape,mail,clave,frec,dir,pais,ciudad,provincia,dist,telf,rol,estado);
+insert into tb_usuarios values(null,nom,ape,mail,clave,frec,dir,pais,ciudad,provincia,dist,telf,rol,estado,staff);
 END$$
 DELIMITER ;
 call sp_saveUsuario('Luis','Bustamante','lbustamanet@gmail.com','123456',curdate(),'Av. Uno',1,1,1,1,'555555',1,1,true);
 
 -- update
 DELIMITER $$
-create procedure sp_updateUsuario(cod int(11),nom varchar(30),ape varchar(30),mail varchar(40), clave varchar(15), frec date,dir varchar(100),pais int(11),ciudad int(11),provincia int(11),dist int(11),telf varchar(15),rol int(11),estado int(11),staff boolean)
+create procedure sp_updateUsuario
+(cod int(11),
+ nom varchar(30),
+ ape varchar(30),
+ mail varchar(40), 
+ clave varchar(15), 
+ frec date,
+ dir varchar(100),
+ pais int(11),
+ ciudad int(11),
+ provincia int(11),
+ dist int(11),
+ telf varchar(15),
+ rol int(11),
+ estado int(11),
+ staff boolean)
 BEGIN
 update tb_producto set 
 nombreU = nom,
@@ -2393,7 +2421,7 @@ DELIMITER ;
 DELIMITER $$
 create procedure sp_findUsuario(cod int(11))
 BEGIN
-select * from tb_usuarios where isUsuario =cod;
+select * from tb_usuarios where idUsuario =cod;
 END$$
 DELIMITER ;
 call sp_findUsuario(1);
