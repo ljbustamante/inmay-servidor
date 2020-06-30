@@ -6,6 +6,6 @@ import com.cibertec.entidad.Categoria;
 import com.cibertec.entidad.Distrito;
 
 public interface CategoriaDAO {
-	public Distrito buscarCategoria(int id);
+	public Categoria buscarCategoria(int id);
 	public List<Categoria> listarCategoria();
 }

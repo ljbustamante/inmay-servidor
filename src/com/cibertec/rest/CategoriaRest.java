@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 
 import com.cibertec.dao.CategoriaDAOImpl;
 
-@Path("/Categoria")
+@Path("/categoria")
 public class CategoriaRest {
 	private CategoriaDAOImpl dao;
 	

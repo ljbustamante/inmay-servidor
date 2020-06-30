@@ -15,22 +15,22 @@ import utils.MysqlDBConexion;
 public class CategoriaDAOImpl implements CategoriaDAO {
 
 	@Override
-	public Distrito buscarCategoria(int id) {
-		Distrito bean=null;
+	public Categoria buscarCategoria(int id) {
+		Categoria bean=null;
 		Connection cn=null;
 		CallableStatement cstm=null;
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_findDistrito(?)";
+			String sql="call sp_findCategoria(?)";
 			cstm=cn.prepareCall(sql);
 			cstm.setInt(1,id);
 			rs=cstm.executeQuery();
 			if(rs.next()) {
-				bean=new Distrito();
-				bean.setIdDistrito(rs.getInt(1));
-				bean.setDescDistrito(rs.getString(2));
-				bean.setIdProvincia(rs.getInt(3));
+				bean=new Categoria();
+				bean.setIdCategoria(rs.getInt(1));
+				bean.setNombreCat(rs.getString(2));
+				bean.setDescripcionCat(rs.getString(3));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();	
