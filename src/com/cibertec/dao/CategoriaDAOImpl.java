@@ -56,7 +56,7 @@ public class CategoriaDAOImpl implements CategoriaDAO {
 		ResultSet rs=null;
 		try {
 			cn=MysqlDBConexion.getConexion();
-			String sql="call sp_listCategorias()";
+			String sql="call sp_listCategoria()";
 			cstm=cn.prepareCall(sql);
 			rs=cstm.executeQuery();
 			while(rs.next()) {
