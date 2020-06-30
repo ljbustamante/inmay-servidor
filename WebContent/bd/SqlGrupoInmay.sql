@@ -2634,6 +2634,24 @@ END$$
 DELIMITER ;
 call sp_findDistrito(1);
 
+-- Rol
+DELIMITER $$
+create procedure  sp_listRol()
+BEGIN
+	select * from tb_roles;
+END$$
+DELIMITER ;
+call sp_listRol();
+
+-- sp_lista_pais, Busqueda de PAISES
+DELIMITER $$
+create procedure  sp_findRol(cod int(11))
+BEGIN
+	select * from tb_roles where idRol=cod;
+END$$
+DELIMITER ;
+call sp_findRol(1);
+
 -- 
 
 
