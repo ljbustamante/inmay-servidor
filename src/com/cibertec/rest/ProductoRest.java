@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import com.cibertec.dao.ProductoDAOImpl;
 import com.cibertec.entidad.Producto;
 
-@Path("/Producto")
+@Path("/producto")
 public class ProductoRest {
 	private ProductoDAOImpl dao;
 	
